@@ -21,7 +21,8 @@ namespace ReadINI
         {
             IntPtr pReturnedString = Marshal.AllocCoTaskMem((int)SECTION_SIZE);
             uint bytesReturned = GetPrivateProfileSectionNames(pReturnedString, SECTION_SIZE, path);
-            //validation needed
+            if (bytesReturned == 0)
+                return null;
             string sectionNamesLocal = Marshal.PtrToStringAnsi(pReturnedString, (int)bytesReturned).ToString();
             string[] tmp = sectionNamesLocal.Split('\0');
             List<string> result = new List<string>();
