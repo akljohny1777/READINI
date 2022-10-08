@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Collections.Generic;
 
-namespace IniReadTest
+namespace ReadINI
 {
     class ReadINI
     {
