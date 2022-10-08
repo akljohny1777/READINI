@@ -8,7 +8,7 @@ namespace ReadINI
 {
     class ReadINI
     {
-        //constants needed here
+        public const int SECTION_SIZE = 32767;
         
         [DllImport("kernel32")]
         private static extern int GetPrivateProfileString(string section, string key, string def, StringBuilder retVal, int size, string filePath);
