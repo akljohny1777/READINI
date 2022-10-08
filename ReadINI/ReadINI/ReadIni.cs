@@ -26,7 +26,10 @@ namespace ReadINI
             string sectionNamesLocal = Marshal.PtrToStringAnsi(pReturnedString, (int)bytesReturned).ToString();
             string[] tmp = sectionNamesLocal.Split('\0');
             List<string> result = new List<string>();
-            //iteration
+            foreach (string entry in tmp)
+            {
+                result.Add(entry);
+            }
             Marshal.FreeCoTaskMem(pReturnedString);
             return result;
         }
